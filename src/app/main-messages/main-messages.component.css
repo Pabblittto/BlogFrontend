@@ -1,0 +1,23 @@
+.MessagesDiv{
+position: fixed;
+right: 0%;
+bottom: 0%;
+padding: 2px;
+}
+.message{
+    border: 1px lightgray solid;
+    margin: 1px; 
+}
+
+.message-element{
+    transition: padding 1s;
+    /* padding-left: 100%; */
+}
+
+.message-element-End{
+padding-left: 100%;
+}
+
+.message-element-Start{
+padding-left: 0%;
+}

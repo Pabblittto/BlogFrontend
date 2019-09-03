@@ -1,0 +1,21 @@
+.Myformgroup div{
+margin: 1em;
+}
+
+.Myformgroup input{
+    border:none;
+    border-bottom: 1px black solid;
+    outline:none;
+    }
+
+.Myformgroup input:focus{
+        border:none;
+        border-bottom: 1px darkgrey solid;
+        }
+
+
+.mytextarea{
+    width: 100%;
+}
+
+

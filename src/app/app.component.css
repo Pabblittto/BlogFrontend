@@ -1,0 +1,65 @@
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited{
+    color: inherit;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.nav-element{
+    border-bottom: 1px inherit solid;
+}
+
+.nav-element:hover{
+    border-bottom: 1px rgb(51, 51, 51) solid;
+    color: rgb(51, 51, 51);
+}
+
+.LoginDiv{
+    background-color: white;
+position: fixed;
+right: -20%;
+top: 0%;
+border: 1px black solid;
+border-radius: 20px;
+padding: 4px;
+transition: 0.5s right;
+visibility: hidden;
+z-index: 10;
+
+}
+
+.DisplayLogin{
+    right: 0%;
+}
+
+.plainButton{
+    border: none;
+    background-color: inherit;
+}
+
+
+.exitcross{
+    color: red;
+    border: none;
+    background-color: inherit;
+}
+
+.exitcross:hover{
+    color: rgb(187, 8, 8);
+}
+
+#nav h4{
+    margin-bottom: 0px;
+}
+
+.ProfilePic{
+    width: 2vw;
+    object-fit: cover;
+}

@@ -1,0 +1,105 @@
+<div class="text-center">
+    <form id="registration" class="row">
+        <div class="col-8 offset-2 shadow shadow-sm Myformgroup">
+            <div class="row">
+                <h5 class="col-4">Login:</h5>
+                <input class="col-8" type="text" name="Login" [(ngModel)]="model.Login" (keyup)="RegisterLoginCheck()">        
+            </div>
+                    <div class=" rounded" *ngIf="LoginMessage.message" 
+                    [ngClass]="{
+                    'alert-danger': LoginMessage.type==1,
+                    'alert-success': LoginMessage.type==2
+                    }">
+                    
+                    {{LoginMessage.message}}
+                    </div>
+            <div class="row">
+                    <h5 class="col-4">Password:</h5>
+                    <input class="col-8" type="password" name="Password" [(ngModel)]="model.Password" (keyup)="RegisterPasswordCheck()">
+            </div>
+            <div class="row">
+                    <h5 class="col-4">Confirm Password:</h5>
+                    <input class="col-8" type="password" name="ConfirmPassword" [(ngModel)]="model.ConfirmPassword" (keyup)="RegisterPasswordCheck()">
+            </div>
+            <div class="rounded" *ngIf="PasswordMessage.message" 
+            [ngClass]="{
+                'alert-danger': PasswordMessage.type==1,
+                'alert-success': PasswordMessage.type==2            
+
+            }">
+                    {{PasswordMessage.message}}
+                </div>
+                <div class="row m-0" >
+                        <div class="col-3">
+
+                        </div>
+                        <div class="col-6 m-0" style="text-align: left;">
+                        Password must have:
+                        <ul>
+                                <li>At least 6 characters</li>
+                                <li>At least one uppercase character</li>
+                                <li>At least one lowercase characer</li>
+                        </ul>                                
+                        </div>
+                </div>
+        <div class="row">
+                <h5 class="col-4">Email:</h5>
+                <input class="col-8" type="email" name="Email" [(ngModel)]="model.Email" (keyup)="EmailShapeCheck()">
+        </div>
+        <div class="rounded" *ngIf="EmailMessage.message" 
+        [ngClass]="{
+            'alert-danger': EmailMessage.type==1,
+            'alert-success': EmailMessage.type==2            
+
+        }">
+                {{EmailMessage.message}}
+            </div>
+
+
+            <div class="row">
+                    <h5 class="col-4">Create your own blog?</h5>
+                    <h6 class="col-2">YES</h6>
+                    <input class="col-2" type="radio" name="CreateBlog" [value]="true" [(ngModel)]="model.CreateBlog">
+                    <h6 class="col-2">NO</h6>
+                    <input class="col-2" type="radio" name="CreateBlog" [value]="false" [(ngModel)]="model.CreateBlog">
+                    <!-- <input class="col-8" type="checkbox" name="OwnBlog" [ngModel]="model.CreateBlog"> -->
+            </div>
+            <div class="row">
+
+                        <h5 class="col-4" [style.color]="model.CreateBlog? 'black':'darkgrey'" >Blog name:</h5>
+                                               
+
+                    <input class="col-8" type="text" name="Blogname" [(ngModel)]="model.Blogname" (keyup)="RegisterBlognameCheck()" [disabled]="!model.CreateBlog">
+            </div>
+            <div class="row">
+                <h6 class="col-4" [style.color]="model.CreateBlog? 'black':'darkgrey'" >{{model.Blogname.length}}/200</h6>
+            </div>
+                <div class="rounded" *ngIf="BlognameMessage.message"
+                [ngClass]="{
+                        'alert-danger':BlognameMessage.type==1,
+                        'alert-success': BlognameMessage.type==2
+                }">
+                        {{BlognameMessage.message}}
+                </div>
+
+            <div class="row m-0">
+                <div class="col-4 m-0" >
+                        <h5 [style.color]="model.CreateBlog? 'black':'darkgrey'" >Description:</h5>
+                        <h6 [style.color]="model.CreateBlog? 'black':'darkgrey'"> {{model.Description.length}}/1000</h6>
+                </div>
+                <div class="col-8 m-0 mb-2">
+                        <textarea class="mytextarea" rows="10" name="Description" [(ngModel)]="model.Description" [disabled]="!model.CreateBlog" (keyup)="RegisterDescriptionCheck()"></textarea>
+                </div>
+                </div>
+                <div class="rounded" *ngIf="DescriptionMessage.message"
+                [ngClass]="{
+                        'alert-danger':DescriptionMessage.type==1,
+                        'alert-success': DescriptionMessage.type==2
+                }">
+                        {{DescriptionMessage.message}}
+                </div>
+            <button class="btn btn-block btn-outline-dark mb-2" (click)="Registerbutton()"> Register</button>
+
+        </div>
+    </form>
+</div>

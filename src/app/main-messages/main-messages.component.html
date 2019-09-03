@@ -1,0 +1,12 @@
+<div class="MessagesDiv">
+    <div *ngFor="let mess of messlist " class="text-center message-element">
+        <div class="rounded alert-danger shadow shadow-sm   "
+        [ngClass]="{
+            'alert-danger':mess.type==1,
+            'alert-success':mess.type==2
+        }"
+        >
+       <h6> {{mess.message}}</h6>            
+        </div>
+    </div>
+</div>

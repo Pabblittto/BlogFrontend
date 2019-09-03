@@ -1,0 +1,19 @@
+.ProfileImage{
+object-fit: contain;
+width: 100%;
+border-radius: 20%;
+}
+
+.ProfileDiv{
+ width: inherit;
+
+}
+
+.ResponsiveText{
+    font-size: 2vw;
+}
+
+.nav-element-choosen{
+    background-color: lightgray;
+    border-bottom: 1px black solid;
+}

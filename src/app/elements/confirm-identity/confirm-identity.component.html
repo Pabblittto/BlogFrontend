@@ -1,3 +1,10 @@
 <div class="WhiteBackground">
-
+    <div class="PasswordDiv text-center">
+        <p>To accept these changes, enter your password</p>
+        <input type="password" class="PasswordInput text-center" placeholder="Password" [(ngModel)]="TypedPassword" >
+        <div>
+            <button class="Buttons" (click)="BackButton()">Back</button>
+            <button class="Buttons" (click)="ConfirmButton()">Confirm</button>
+        </div>
+    </div>
 </div>

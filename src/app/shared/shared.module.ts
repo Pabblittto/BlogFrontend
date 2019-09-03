@@ -1,5 +1,5 @@
+import { FormsModule } from '@angular/forms';
 import { ConfirmIdentityComponent } from './../elements/confirm-identity/confirm-identity.component';
-import { PostComponent } from './../post/post.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PostElementComponent } from '../elements/post-element/post-element.component';
@@ -12,10 +12,12 @@ import { sharedRoutingModule } from './shared-routing.module';
   declarations: [    
     PostElementComponent, 
     TagComponent,
-    ConfirmIdentityComponent],
+    ConfirmIdentityComponent
+  ],
     imports: [
     CommonModule,
-    sharedRoutingModule
+    sharedRoutingModule,
+    FormsModule
   ],
   exports:[
     PostElementComponent, 

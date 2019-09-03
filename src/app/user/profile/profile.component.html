@@ -6,12 +6,6 @@
         <div class="ResponsiveText text-center">
             <p>Hello {{auth.SimpleUserData.name}}</p>
         </div>
-        <!-- <form>
-            <label for="UploadImage" class="btn btn-danger">choose file</label>
-            <input type="file" name="profile" id="UploadImage" style="display:none;"> 
-            <button class="w-100 plainButton nav-element">Change profile picture </button>
-        </form> -->
-        <!-- <a class="w-100 plainButton nav-element" [routerLink]="[{outlets:{ProfileRouter:['Picture']}}]" >Change profile picture </a>        -->
         <div class="w-100 text-center nav-element pl-1 pr-1" [class.nav-element-choosen]="choosenOption =='general'">
                 <a class="w-100 " routerLink="General" (click)="CheckChoosen('general')">General</a>  
         </div>
@@ -24,11 +18,7 @@
                 <a class="w-100 " routerLink="Password" (click)="CheckChoosen('password')">Change password</a>  
         </div>
 
-
-             
-
         <p>my tags</p>
-<!-- routerLink="outlets:{ProfileRouter:'profile/Picture'}" -->
     </div>
 
     <div class="col-8 shadow shadow-sm p-1 " style="height: 50vw;" > <!-- Date of created, owned tags, email, and otners -->

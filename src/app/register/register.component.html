@@ -1,17 +1,16 @@
 <div class="text-center">
     <form id="registration" class="row">
-        <div class="col-8 offset-2 shadow shadow-sm Myformgroup">
+        <div class="col-8 offset-2 shadow shadow-sm Myformgroup ">
             <div class="row">
                 <h5 class="col-4">Login:</h5>
                 <input class="col-8" type="text" name="Login" [(ngModel)]="model.Login" (keyup)="RegisterLoginCheck()">        
             </div>
-                    <div class=" rounded" *ngIf="LoginMessage.message" 
+                    <div class="rounded" *ngIf="LoginMessage.message" 
                     [ngClass]="{
                     'alert-danger': LoginMessage.type==1,
                     'alert-success': LoginMessage.type==2
                     }">
-                    
-                    {{LoginMessage.message}}
+                        {{LoginMessage.message}}
                     </div>
             <div class="row">
                     <h5 class="col-4">Password:</h5>

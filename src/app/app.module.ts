@@ -1,3 +1,4 @@
+import { SharedModule } from './shared/shared.module';
 import { ConfirmIdentityComponent } from './elements/confirm-identity/confirm-identity.component';
 import { TagComponent } from './elements/tag-element/tag/tag.component';
 import { UserOnlyGuard } from './guards/UserOnlyGuard';
@@ -27,23 +28,21 @@ import { PostElementComponent } from './elements/post-element/post-element.compo
     RegisterComponent,
     MainMessagesComponent,
     NewsComponent,
-    PostComponent,
-    PostElementComponent,
-    TagComponent,
-    ConfirmIdentityComponent
+    PostComponent
+    // PostElementComponent,
+    // TagComponent,
+    // ConfirmIdentityComponent
     ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    UserModule
+    UserModule,
+    SharedModule
   ],
   exports:[
-    PostComponent,
-    PostElementComponent,
-    TagComponent,
-    ConfirmIdentityComponent
+
   ],
   providers: [AuthService,CheckPoolsService,MessagesService,PostService,UserOnlyGuard],
   bootstrap: [AppComponent]

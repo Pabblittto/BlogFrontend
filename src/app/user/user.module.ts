@@ -1,3 +1,4 @@
+import { SharedModule } from './../shared/shared.module';
 import { AppModule } from './../app.module';
 import { UserRoutingModule } from './user-routing.module';
 import { AuthService } from './../services/Auth/auth.service';
@@ -12,12 +13,15 @@ import { ProfilePasswordComponent } from './profile-password/profile-password.co
 
 
 @NgModule({
-  declarations: [ProfileComponent, ProfilePictureComponent, ProfileGeneralComponent, ProfilePasswordComponent],
+  declarations: [ProfileComponent,
+    ProfilePictureComponent,
+    ProfileGeneralComponent,
+    ProfilePasswordComponent,],
   providers:[AuthService],
   imports: [
     CommonModule,
     UserRoutingModule,
-    AppModule
+    SharedModule
     ]
 })
 export class UserModule { }

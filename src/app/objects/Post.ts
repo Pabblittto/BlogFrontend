@@ -9,6 +9,7 @@ export class Post{
     ContentTwo: string;
     Date: Date;
     BlogId: number;
+    BlogName:string;
     PostTags: string[];
     Comments:Comment[];
     Images:string[];

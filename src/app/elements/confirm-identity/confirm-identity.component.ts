@@ -23,6 +23,7 @@ export class ConfirmIdentityComponent implements OnInit {
       this.messageProvider.AddMessage("Password can't be empty!",types.danger);
     }
     else{
+      this.TypedPassword="";
       this.Password.emit(this.TypedPassword);
       document.getElementById('ConfirmPassword').style.display='none';
     }

@@ -39,8 +39,10 @@ export class AppComponent {
           setTimeout(()=>{
             this.LoginStatus= new Message();
           },4000);
-          if(err.status!=404)
-            this.LoginStatus= new Message("Invalid login!",types.danger)
+          if(err.status!=404){
+             this.LoginStatus= new Message("Invalid login!",types.danger)
+             this.Password="";
+          }
           else
             this.messageprovider.AddCriticalError();
         })

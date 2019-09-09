@@ -1,0 +1,31 @@
+.TitleDiv{
+    text-align: center;
+
+}
+
+.ButtonsDiv{
+    text-align: center;
+}
+
+.MyBlogButton{
+    margin: 2px;
+    background-color: inherit;
+    outline: none;
+    border: none;
+    border-bottom: 1px lightgray solid;
+}
+
+.MyBlogButton:hover{
+    border-bottom: 1px black solid;
+}
+
+.PostsContainer{
+text-align: center;
+}
+
+
+.PostButtonsDiv{
+    padding-left: 3vw;
+    text-align: center;
+    margin-top: 4vw;
+}

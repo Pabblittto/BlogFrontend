@@ -1,8 +1,10 @@
+import { MessagesService } from './../Messages/messages.service';
 import { JWTpayload } from './../../objects/JWTpayload';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import Urls from '../../urls.json';
+import { types } from '../Messages/Message';
 
 @Injectable({
   providedIn: 'root'
@@ -18,14 +20,26 @@ export class AuthService{
 
   LoggedIn:boolean;
 
-  constructor(private http :HttpClient) {
+  constructor(private http :HttpClient,private messageprovider:MessagesService) {
     this.IsLoggedIn().subscribe(res=>{
       this.LoggedIn=res;
     });
   this.TryGetToken();
   this.DecodeJWT();
+  //this.CheckExpTime(); to musze włączyć!!
+
+
   }
   
+  private CheckExpTime():void{// checks expiration time and log out if token expired
+    let nowTime=Date.now()/1000;
+    if(nowTime>this.SimpleUserData.exp)//token expired- log out
+    {
+      this.Logout();
+      this.messageprovider.AddMessage("Your session expired",types.danger);
+    }
+
+  }
 
   Logout(){
     this.LoginEvents.next(false);
@@ -60,7 +74,7 @@ export class AuthService{
     this.TryGetToken();
     if(this.token!=null){
     this.SimpleUserData = JSON.parse(window.atob(this.token.split('.')[1]));
-    this.SimpleUserData.ProfilePic= Urls.MyServerPath+ this.SimpleUserData.ProfilePic;      
+    this.SimpleUserData.ProfilePic= Urls.MyServerPath + this.SimpleUserData.ProfilePic;      
     }
 
   }

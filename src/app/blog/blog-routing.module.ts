@@ -1,10 +1,11 @@
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { MyBlogComponent } from './my-blog/my-blog.component';
 
 
 const UserRoutes:Routes=[
-    {path:"myblog", component:null}
+    {path:"myblog", component:MyBlogComponent}
 
 ]
 

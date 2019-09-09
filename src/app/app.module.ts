@@ -1,3 +1,4 @@
+import { AuthInterceptor } from './objects/Interceptors/AuthInterceptor';
 import { SharedModule } from './shared/shared.module';
 import { ConfirmIdentityComponent } from './elements/confirm-identity/confirm-identity.component';
 import { TagComponent } from './elements/tag-element/tag/tag.component';
@@ -13,8 +14,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { RegisterComponent } from './register/register.component';
-import {FormsModule} from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule} from '@angular/forms';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MainMessagesComponent } from './main-messages/main-messages.component';
 import { NewsComponent } from './news/news.component';
 import { PostComponent } from './post/post.component';
@@ -29,9 +30,6 @@ import { PostElementComponent } from './elements/post-element/post-element.compo
     MainMessagesComponent,
     NewsComponent,
     PostComponent
-    // PostElementComponent,
-    // TagComponent,
-    // ConfirmIdentityComponent
     ],
   imports: [
     BrowserModule,
@@ -44,7 +42,11 @@ import { PostElementComponent } from './elements/post-element/post-element.compo
   exports:[
 
   ],
-  providers: [AuthService,CheckPoolsService,MessagesService,PostService,UserOnlyGuard],
+  providers: [AuthService,CheckPoolsService,MessagesService,PostService,UserOnlyGuard,
+    {provide:HTTP_INTERCEPTORS,
+      useClass:AuthInterceptor,
+      multi:true
+      }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

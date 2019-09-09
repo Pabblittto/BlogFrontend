@@ -1,0 +1,38 @@
+<div class="shadow shadow-sm">
+    <div class="TitleDiv ">
+        <h3>{{MyBlog.BlogName}}</h3>
+    </div>
+    <div class="row">
+        <div class="col-auto">
+            Description:
+        </div>
+        <div class="col-auto">
+            {{MyBlog.Description}}
+        </div>
+    </div>
+    <div>
+        Created Day: {{MyBlog.DateOfCreated| date}}
+    </div>
+    <hr>
+    <div class="ButtonsDiv">
+        <button class="MyBlogButton">Edit Description</button>
+        <button class="MyBlogButton">Add Post</button>
+        <button class="MyBlogButton">Delete Blog</button>
+    </div>
+    <div class="PostsContainer">
+        <div *ngFor="let post of MyBlog.Posts" class="row">
+            <div class="col-auto PostButtonsDiv">
+                <div class="w-100 text-center"> 
+                    <button class="MyBlogButton">Delete Post</button>
+                </div>
+                <div>
+                    <button class="MyBlogButton">Edit Post</button>
+                </div>
+            </div>
+            <app-post-element [_post]="post" class="col "></app-post-element>
+        </div>        
+    </div>
+
+
+
+</div>

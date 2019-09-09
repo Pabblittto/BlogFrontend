@@ -6,7 +6,8 @@
         "RegisterUrl":"http://localhost:61177/api/Authentication/Register",
         "CertainPostUrl":"http://localhost:61177/api/Posts/CertainPost",
         "MyServerPath": "http://localhost:61177",
-        "ChangePassword": "http://localhost:61177/"
+        "ChangePassword": "http://localhost:61177/api/User/ChangePassword",
+        "GetBlog":""
         
 
 }

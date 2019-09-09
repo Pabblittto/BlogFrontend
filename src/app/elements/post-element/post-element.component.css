@@ -21,6 +21,7 @@
     box-shadow: 10px 10px 5px  lightblue;
     height: 15vw;
     border: 1px lightgray solid;
+    text-align: left;
 }
 
 .content-box:hover .post-element-title{

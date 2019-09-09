@@ -1,8 +1,10 @@
+import { ChangePasswordModel } from './../../objects/Models/ChangePasswordModel';
 import { MessagesService } from './../../services/Messages/messages.service';
 import { types } from 'src/app/services/Messages/Message';
 import { Message } from './../../services/Messages/Message';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import urls from '../../urls.json';
 
 @Component({
   selector: 'app-profile-password',
@@ -10,6 +12,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-password.component.css']
 })
 export class ProfilePasswordComponent implements OnInit {
+
+  ChangePasswordUrl: string= urls.ChangePassword;
 
   NewPassword:string="";
   ConfirmNewPassword:string="";
@@ -22,8 +26,26 @@ export class ProfilePasswordComponent implements OnInit {
 
   GetTypedPassword(password:string){
     this.PasswordFromConfirm=password;
-    this.messagesprovider.AddMessage("Trzebaaaaaaaaaaa wysłać info do servera",types.danger);
-    // tu trzeba wysłać http do servera
+    var model= new ChangePasswordModel({
+      NewPassword:this.NewPassword,
+      ConfirmNewPassword: this.ConfirmNewPassword,
+      OldPassword: this.PasswordFromConfirm
+    });
+    this.http.post(this.ChangePasswordUrl,model).subscribe(
+      res=>{
+        this.messagesprovider.AddMessage("Password Changed Succesfully",types.success);
+      },
+      (err:HttpErrorResponse)=>{
+        if(err.status==401){// if error was unauthorized- bad password or 
+          this.messagesprovider.AddMessage("Invalid Password or token time expires!",types.danger);
+        }
+        else if(err.status==404){
+          this.messagesprovider.AddCriticalError();
+        } 
+        else{
+          this.messagesprovider.AddMessage("Unexpected error - invalid new password",types.danger);
+        }
+      })
   }
 
   ChangePasswordButton(){

@@ -11,7 +11,7 @@
   <div *ngIf="auth.LoggedIn; then LoggedIn else NotLoggedIn">    </div>
   
   
-  <ng-template #NotLoggedIn >
+  <ng-template #NotLoggedIn>
     <div class="navbar-nav  flex-sm-row">
         <a routerLink="/register" class="nav-element ml-2"><h4>Register</h4></a>
         <button (click)="ShowLogin()" class="nav-element ml-2 plainButton"><h4>Log in</h4></button>

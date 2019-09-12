@@ -1,0 +1,7 @@
+<p>Your Tags:</p>
+<div *ngFor="let tag of MyTags" class="TagDiv">
+    <app-tag [name]="tag"></app-tag>
+</div>
+<div *ngIf="MyTags.length == 0">
+<p class="Info">You don't have any tags :/</p>
+</div>

@@ -1,0 +1,9 @@
+<div class="PostButtonsDiv">
+    <div class="w-100 text-center"> 
+        <button class="MyBlogButton" (click)="DeleteButton()" >Delete Post</button>
+    </div>
+    <div>
+        <button class="MyBlogButton">Edit Post</button>
+    </div>
+    <app-confirm-changes id="Confirm{{SpecyficPost.PostId}}" (Result)="GetResult($event)" [Action]="Information" style="display: none"></app-confirm-changes>
+</div>

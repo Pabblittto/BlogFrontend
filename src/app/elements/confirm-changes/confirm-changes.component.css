@@ -1,0 +1,44 @@
+.WhiteBackground{
+    background-color: rgba(255, 255, 255, 0.719);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    left:0%;
+    z-index: 99;
+}
+
+.PasswordDiv{
+    opacity: 1;
+    background-color: lightgray;
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px black solid;
+    position: absolute;
+    top: 30%;
+    width: 400px;
+    left: 50%;
+    margin-left: -200px;
+
+
+}
+
+.PasswordInput{
+ color: black;
+ outline: none; 
+ border:none; 
+ border-bottom: 1px black solid;
+ background-color: inherit;
+}
+
+.Buttons{
+    border:none;
+    margin: 2px;
+    border-bottom: 1px transparent solid;
+    background-color: white;
+    outline: none;
+}
+
+.Buttons:hover{
+    border-bottom: 1px black solid;
+}

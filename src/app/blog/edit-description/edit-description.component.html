@@ -1,0 +1,14 @@
+<div class="WhiteBackground">
+        <div class="PasswordDiv text-center">
+            <p>Edit description</p>
+            <textarea [(ngModel)]="NewDescription" class="DescriptionTextarea"></textarea>
+            <div>
+                {{NewDescription.length}}/1000
+            </div>
+            <div>
+                <button class="Buttons" (click)="BackButton()">Back</button>
+                <button class="Buttons" (click)="ConfirmButton()">Confirm</button>
+            </div>
+        </div>
+</div>
+    

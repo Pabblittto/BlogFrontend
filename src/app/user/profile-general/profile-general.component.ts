@@ -10,6 +10,7 @@ export class ProfileGeneralComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

@@ -4,7 +4,7 @@
             <img src="{{auth.SimpleUserData.ProfilePic}}" class="ProfileImage"> 
         </div>
         <div class="ResponsiveText text-center">
-            <p>Hello {{auth.SimpleUserData.name}}</p>
+            <p>Hello {{auth.SimpleUserData.unique_name}}</p>
         </div>
         <div class="w-100 text-center nav-element pl-1 pr-1" [class.nav-element-choosen]="choosenOption =='general'">
                 <a class="w-100 " routerLink="General" (click)="CheckChoosen('general')">General</a>  
@@ -17,8 +17,9 @@
         <div class="w-100 text-center nav-element pl-1 pr-1" [class.nav-element-choosen]="choosenOption =='password'" >
                 <a class="w-100 " routerLink="Password" (click)="CheckChoosen('password')">Change password</a>  
         </div>
-
-        <p>my tags</p>
+        <div class="w-100 text-center nav-element pl-1 pr-1" [class.nav-element-choosen]="choosenOption =='MyTags'" >
+            <a class="w-100 " routerLink="MyTags" (click)="CheckChoosen('MyTags')">My Tags</a>  
+        </div>
     </div>
 
     <div class="col-8 shadow shadow-sm p-1 " style="height: 50vw;" > <!-- Date of created, owned tags, email, and otners -->

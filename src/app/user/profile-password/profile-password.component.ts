@@ -5,6 +5,7 @@ import { Message } from './../../services/Messages/Message';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import urls from '../../urls.json';
+import { Logs } from 'selenium-webdriver';
 
 @Component({
   selector: 'app-profile-password',
@@ -24,8 +25,9 @@ export class ProfilePasswordComponent implements OnInit {
 
   NewPasswordMessage:Message = new Message();
 
-  GetTypedPassword(password:string){
-    this.PasswordFromConfirm=password;
+  GetTypedPassword(event){
+    
+    this.PasswordFromConfirm=event;    
     var model= new ChangePasswordModel({
       NewPassword:this.NewPassword,
       ConfirmNewPassword: this.ConfirmNewPassword,

@@ -1,7 +1,8 @@
 .ProfileImage{
-object-fit: contain;
+object-fit: cover;
 width: 100%;
 border-radius: 20%;
+height: 16vw;
 }
 
 .ProfileDiv{

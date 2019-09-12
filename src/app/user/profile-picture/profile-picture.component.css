@@ -1,0 +1,32 @@
+.InputFile{
+    background-color: lightgray;
+    border: 2px black dotted;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.InputFile label{
+padding:2px;
+margin: 2px;
+text-align: center;
+}
+.ResultDiv{
+overflow: hidden;
+padding:2px;
+margin: 2px;
+    }
+
+.whenhover:hover{
+    border-bottom: 1px black solid;
+}
+
+.Buttons{
+    border:none;
+    margin: 2px;
+    border-bottom: 1px transparent solid;
+    background-color: white;
+    outline: none;
+}
+
+.Buttons:hover{
+    border-bottom: 1px black solid;
+}

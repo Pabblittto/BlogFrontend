@@ -1,0 +1,30 @@
+.MyInputs{
+    border: none;
+    border-bottom: 1px black solid;
+    outline: none;
+    width: 100%;
+    text-align: center;
+}
+
+.Title{
+    font-size: 30px;
+}
+.MyTextArea{
+width: 100%;
+outline: none;
+height: 40vh;
+resize: none;
+}
+
+
+.ThubmnailLabel{
+    width: 100%;
+    border: 1px black solid;
+    cursor: pointer;
+    height: 30px;
+}
+
+.ThubmnailLabel:hover{
+    width: 100%;
+    text-decoration: underline;
+}

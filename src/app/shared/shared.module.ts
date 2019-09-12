@@ -1,3 +1,5 @@
+import { PostModyficationPanelComponent } from './../elements/post-modyfication-panel/post-modyfication-panel.component';
+import { ConfirmChangesComponent } from './../elements/confirm-changes/confirm-changes.component';
 import { FormsModule } from '@angular/forms';
 import { ConfirmIdentityComponent } from './../elements/confirm-identity/confirm-identity.component';
 import { NgModule } from '@angular/core';
@@ -12,7 +14,9 @@ import { sharedRoutingModule } from './shared-routing.module';
   declarations: [    
     PostElementComponent, 
     TagComponent,
-    ConfirmIdentityComponent
+    ConfirmIdentityComponent,
+    ConfirmChangesComponent,
+    PostModyficationPanelComponent
   ],
     imports: [
     CommonModule,
@@ -22,7 +26,9 @@ import { sharedRoutingModule } from './shared-routing.module';
   exports:[
     PostElementComponent, 
     TagComponent,
-    ConfirmIdentityComponent
+    ConfirmIdentityComponent,
+    ConfirmChangesComponent,
+    PostModyficationPanelComponent
   ]
 })
 export class SharedModule { }

@@ -1,3 +1,4 @@
+import { ProfileTagsComponent } from './profile-tags/profile-tags.component';
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -13,6 +14,7 @@ const UserRoutes:Routes=[
       {path:'Picture',component:ProfilePictureComponent},
       {path:'Password',component:ProfilePasswordComponent},
       {path:'General',component:ProfileGeneralComponent},
+      {path:'MyTags',component:ProfileTagsComponent},
 
     ]
   },

@@ -1,0 +1,25 @@
+<div class="shadow shadow-sm">
+    <div>
+        <label for="thumbnail" class="text-center ThubmnailLabel">Choose thumbnail or drag it here</label>
+        <input type="file" accept="image/*" id="thumbnail" style="display: none"/>
+    </div>
+    <div class="m-2">
+        <input placeholder="Post Title" class="MyInputs Title" [(ngModel)]="NewPost.Title">
+    </div>    
+    <div class="m-2" ><!--content one required-->
+        <textarea class="MyTextArea" placeholder="First Paragraph" [(ngModel)]="NewPost.ContentOne"></textarea>
+    </div>
+    <div class="m-2" ><!--content one required-->
+        <textarea class="MyTextArea" placeholder="Second Paragraph" [(ngModel)]="NewPost.ContentTwo"></textarea>
+    </div>
+    <div >
+        <input type="file" accept="image/*" multiple>
+    </div>
+    <div>
+        <h6>Added Images:</h6>
+    </div>
+    <div>
+
+    </div>
+</div>
+

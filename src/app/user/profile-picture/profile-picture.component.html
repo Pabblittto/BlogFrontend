@@ -1,1 +1,20 @@
-<input type="file" >
+<form action=""  [formGroup]="Myform" (ngSubmit)="submit()">
+    <div class="row InputFile">
+    <label for="imageinput" class="col-auto whenhover">Choose File</label>    
+    <input type="file" formControlName="ProfileImg" name="profileImg" id="imageinput" class="form-control" (change)="ChangingImage($event)" accept="image/*" style="display: none">
+        <div class="col-auto ResultDiv" *ngIf="ImgName; else NoFile">
+            Choosen file: {{ImgName}}
+        </div>
+        <ng-template  #NoFile>
+            <div class="col-auto ResultDiv" >
+                    File was not choosen
+            </div>
+        </ng-template>
+    </div>
+    <div class="text-center">
+            <button type="submit" class="Buttons"> Change Picture </button>
+
+    </div>
+
+
+</form>

@@ -19,12 +19,50 @@ resize: none;
 
 .ThubmnailLabel{
     width: 100%;
-    border: 1px black solid;
-    cursor: pointer;
-    height: 30px;
+    
 }
 
 .ThubmnailLabel:hover{
     width: 100%;
     text-decoration: underline;
+    cursor: pointer;
+}
+
+.dropzone{
+    height: 20vh;
+    border: 1px black solid;
+    transition: background 0.5s;
+}
+
+.ListImageContainer{
+    height: 10vh;
+    width: 10vh;
+}
+
+.ImageOnlist{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;;
+}
+
+.ListElement{
+    height: 10vh;
+
+}
+.FileListName{
+    overflow: hidden;
+    padding-top: 4vh;
+}
+.MyButtonList{
+    margin: 2px;
+    background-color: inherit;
+    outline: none;
+    border: none;
+    border-bottom: 1px lightgray solid;
+    height: 18px;
+    margin-top: 4vh;
+}
+
+.MyButtonList:hover{
+    border-bottom: 1px red solid;
 }

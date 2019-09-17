@@ -1,0 +1,12 @@
+<div>
+   <input type="text" [(ngModel)]="TypedString" class="MyInput" (focus)="DisplayTagList()"
+   (focusout)="HideTagList()" (keyup)="ChangedInput($event)" (keydown.enter)="SendSelected()" 
+   (keydown.ArrowUp)="PressUPKey()" (keydown.ArrowDown)="PressDOWNKey()"  >
+    <div class="OptionsContainer" id="TagOptions" [ngClass]="{'OptionsContainerHIDE':!DisplayOptions}"  #OptionsContainer>
+        <div class="Option" *ngFor="let Option of PossibleOptions; let i= index" (click)="OptionClick(Option)"
+        [ngClass]="{'OptionIndexhover':HighlightedElement==i}" (mouseover)="HIDEHighlight()"
+        >{{Option}}</div>
+        <p class="m-0">{{Alert}}</p>
+    </div>
+ 
+</div>

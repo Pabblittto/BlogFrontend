@@ -10,7 +10,10 @@ import { EditDescriptionComponent } from './edit-description/edit-description.co
 
 
 @NgModule({
-  declarations: [MyBlogComponent, AddPostComponent, EditDescriptionComponent],
+  declarations: [MyBlogComponent,
+     AddPostComponent, 
+     EditDescriptionComponent  
+    ],
   imports: [
     CommonModule,
     BlogRoutingModule,

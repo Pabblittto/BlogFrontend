@@ -21,7 +21,6 @@ import { NewsComponent } from './news/news.component';
 import { PostComponent } from './post/post.component';
 import { PostService } from './services/Post/post.service';
 import { PostElementComponent } from './elements/post-element/post-element.component';
-import { DragAndDropDirective } from './directives/drag-and-drop.directive';
 
 @NgModule({
   declarations: [
@@ -30,8 +29,7 @@ import { DragAndDropDirective } from './directives/drag-and-drop.directive';
     RegisterComponent,
     MainMessagesComponent,
     NewsComponent,
-    PostComponent,
-    DragAndDropDirective
+    PostComponent
     ],
   imports: [
     BrowserModule,

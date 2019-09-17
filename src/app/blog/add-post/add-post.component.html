@@ -1,8 +1,12 @@
-<div class="shadow shadow-sm">
-    <div>
-        <label for="thumbnail" class="text-center ThubmnailLabel">Choose thumbnail or drag it here</label>
-        <input type="file" accept="image/*" id="thumbnail" style="display: none"/>
+<div class="shadow shadow-sm p-2">
+    <div appDragAndDrop class="dropzone"> 
+        <label for="thumbnail" class="text-center ThubmnailLabel" >Choose thumbnail or drag it here</label>
+        <input type="file" accept="image/*" id="thumbnail" style="display: none" (input)="ChoosenThumbnai($event)" />
+        <div>
+            Choosed file:
+        </div>        
     </div>
+
     <div class="m-2">
         <input placeholder="Post Title" class="MyInputs Title" [(ngModel)]="NewPost.Title">
     </div>    
@@ -12,14 +16,43 @@
     <div class="m-2" ><!--content one required-->
         <textarea class="MyTextArea" placeholder="Second Paragraph" [(ngModel)]="NewPost.ContentTwo"></textarea>
     </div>
-    <div >
-        <input type="file" accept="image/*" multiple>
+
+    <div class="w-100 row mb-1"> 
+        <div class="col-auto">
+                Tags:
+                <app-input-select-list (SelectedOption)="AddToTaglist($event)" [AllPossibleOptions]="RegisteredTags" > </app-input-select-list>
+        </div>
+        <div class="col">
+            Choosed tags:
+            <div class="d-flex flex-wrap w-100" *ngIf="TagList.length>0; else NoTags">
+                <div *ngFor="let tag of TagList">
+                        <app-tag [name]="tag" [RouteToTag]="false" appDeleteTag></app-tag>
+                </div>
+            </div>
+            <ng-template #NoTags>No Tag was choosed :c </ng-template>
+        </div>
     </div>
+
+    <div appDragAndDrop class=" dropzone text-center" (eventOut)="AddToFileList($event)" draggable="true" >
+        <label for="images" class=" ThubmnailLabel w-100 h-100"> Click here to add file or drag it here </label>
+        <input type="file" accept="image/*" (input)="AddToFileList($event)" id="images" hidden multiple>
+
+    </div>
+
     <div>
         <h6>Added Images:</h6>
     </div>
-    <div>
-
+    <div *ngIf="FileList.length>0; else NoFiles">
+        <div *ngFor="let image of FileList" class="shadow-sm m-1">
+            <div class="row ListElement pl-2 pr-2">
+                <div class="col-1 ListImageContainer ml-2 p-0">
+                        <img src="{{image.value}}" class="ImageOnlist" >
+                </div>
+                <p class=" col-9 FileListName">{{image.name}} </p>
+                <button class="col-1 MyButtonList" (click)="DeleteFile(image)">X</button> 
+            </div>
+        </div>
     </div>
+    <ng-template #NoFiles>No files was choosed :c</ng-template>
 </div>
 

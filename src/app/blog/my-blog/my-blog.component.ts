@@ -8,7 +8,6 @@ import { BlogModel } from './../../objects/Models/BlogModel';
 import { MessagesService } from './../../services/Messages/messages.service';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { type } from 'os';
 import { types } from 'src/app/services/Messages/Message';
 
 

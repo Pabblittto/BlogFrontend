@@ -17,7 +17,11 @@
         "GetBlog":"",
         "DeletePost":"",
         "ChangeDescription":"",
-        "AddPost":""
+        "AddPost":"",
+        "DeleteBlog":"",
+        "GetNumberOfPostsInBlog":"",
+        "GetPartOfPosts":""
+
         
         
 

@@ -1,3 +1,4 @@
+import { BlogService } from './services/Blog/blog.service';
 import { AuthInterceptor } from './objects/Interceptors/AuthInterceptor';
 import { SharedModule } from './shared/shared.module';
 import { ConfirmIdentityComponent } from './elements/confirm-identity/confirm-identity.component';
@@ -42,7 +43,7 @@ import { PostElementComponent } from './elements/post-element/post-element.compo
   exports:[
 
   ],
-  providers: [AuthService,CheckPoolsService,MessagesService,PostService,UserOnlyGuard,
+  providers: [AuthService,CheckPoolsService,MessagesService,PostService,UserOnlyGuard,BlogService,
     {provide:HTTP_INTERCEPTORS,
       useClass:AuthInterceptor,
       multi:true

@@ -17,7 +17,9 @@
     <div class="ButtonsDiv">
         <button class="MyBlogButton" (click)="ChangeDescription()">Edit Description</button>
         <button class="MyBlogButton" (click)="AddPostButton()">Add Post</button>
-        <button class="MyBlogButton" >Delete Blog</button>
+        <button class="MyBlogButton" (click)="DeleteBlogButton()" >Delete Blog</button>
+                <app-confirm-changes [Action]="'Delete Your Blog'" (Result)="ResultOfChanges($event)" #ConfirmChanges></app-confirm-changes>
+                <app-confirm-identity (Password)="RecivePasswordDeleteBlog($event)"  #ConfirmIdentity></app-confirm-identity>
         <app-edit-description id="DescriptionEdit" style="display: none;" [Description]="MyBlog.Description" ></app-edit-description>
     </div>
     <div class="PostsContainer">

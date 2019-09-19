@@ -5,6 +5,8 @@
     width: 100%;
     top: 0%;
     left:0%;
+    z-index: 99;
+    display: none;
 }
 
 .PasswordDiv{
@@ -18,7 +20,7 @@
     width: 400px;
     left: 50%;
     margin-left: -200px;
-
+    z-index: 100;
 
 }
 

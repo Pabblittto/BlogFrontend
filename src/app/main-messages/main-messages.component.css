@@ -3,6 +3,7 @@ position: fixed;
 right: 0%;
 bottom: 0%;
 padding: 2px;
+z-index: 999;
 }
 .message{
     border: 1px lightgray solid;

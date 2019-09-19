@@ -1,5 +1,5 @@
 import { MessagesService } from './../../services/Messages/messages.service';
-import { Component, OnInit, Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { types } from 'src/app/services/Messages/Message';
 
 
@@ -13,6 +13,15 @@ export class ConfirmIdentityComponent implements OnInit {
   constructor(private messageProvider:MessagesService) { }
 
   @Output() Password = new EventEmitter<string>();
+  @ViewChild("Background",{static:true}) Background: ElementRef<HTMLElement>;
+
+  Show(){
+    this.Background.nativeElement.style.display="block";
+  }
+
+  Hide(){
+    this.Background.nativeElement.style.display="none";
+  }
 
 
   TypedPassword:string="";
@@ -25,13 +34,13 @@ export class ConfirmIdentityComponent implements OnInit {
     else{
       this.Password.emit(this.TypedPassword);      
       this.TypedPassword="";
-      document.getElementById('ConfirmPassword').style.display='none';
+      this.Hide();
     }
   }
 
   BackButton(){
     this.TypedPassword="";// reset password
-    document.getElementById('ConfirmPassword').style.display='none';
+    this.Hide();
   }
 
   ngOnInit() {

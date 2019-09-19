@@ -5,5 +5,5 @@
     <div>
         <button class="MyBlogButton">Edit Post</button>
     </div>
-    <app-confirm-changes id="Confirm{{SpecyficPost.PostId}}" (Result)="GetResult($event)" [Action]="Information" style="display: none"></app-confirm-changes>
+    <app-confirm-changes (Result)="GetResult($event)" [Action]="Information" ></app-confirm-changes>
 </div>

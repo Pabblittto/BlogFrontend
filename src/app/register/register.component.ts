@@ -28,7 +28,10 @@ export class RegisterComponent implements OnInit {
   passwordRegulerExp=/(?=.*[a-z])(?=.*[A-Z])[A-Za-z\d$@$!%*?&].{5,}/;
 
   RegisterLoginCheck(){
-    if(this.model.Login!=''){
+    if(this.model.Login.includes(' ')){
+      this.LoginMessage= new Message("Login can not contain white characters",types.danger);
+    }
+    else if(this.model.Login!=''){
       // this.LoginMessage = new Message();
       this.checkservice.LoginCheck(this.model.Login).subscribe(
         res=>{// when server returned OK response
@@ -47,7 +50,10 @@ export class RegisterComponent implements OnInit {
   }
 
   RegisterPasswordCheck(){
-    if(this.model.checkPasswords()==false){
+    if(this.model.Password.includes(' ')|| this.model.ConfirmPassword.includes(' ')){
+      this.PasswordMessage= new Message("Passwords can not contain white characters!",types.danger);
+    }
+    else if(this.model.checkPasswords()==false){
       this.PasswordMessage= new Message("Passwords not match",types.danger);
     }
     else{
@@ -63,6 +69,7 @@ export class RegisterComponent implements OnInit {
 
 
   RegisterBlognameCheck(){
+    this.model.Blogname.trim();
     if(this.model.Blogname=="" && this.model.CreateBlog==true){
       this.BlognameMessage= new Message("Blog name cant be empty!",types.danger);
     }

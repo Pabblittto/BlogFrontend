@@ -1,19 +1,46 @@
+<div class="WarningPool" #WarningDiv>
+    <div class="InformationDiv">
+            <p class="text-center">Warning! Some fields are not filled correctly!</p>
+            <p *ngIf="WarningsOccured" class="text-center">Are you sure to continue?</p>
+            <ul>
+                <li *ngFor="let warning of ListOfWarnings">{{warning}}</li>
+            </ul>
+            <div class="row"> 
+                <button class="col MyBlogButton CancelBtn" (click)="WarningBack()"> Back</button>
+                <button class="col MyBlogButton AddPostBtn" [disabled]="!FormIsValid" (click)="WarningConfirm()">Confirm</button>
+            </div>
+    </div>
+</div>
+
 <div class="shadow shadow-sm p-2">
-    <div appDragAndDrop class="dropzone"> 
-        <label for="thumbnail" class="text-center ThubmnailLabel" >Choose thumbnail or drag it here</label>
-        <input type="file" accept="image/*" id="thumbnail" style="display: none" (input)="ChoosenThumbnai($event)" />
-        <div>
-            Choosed file:
+    <div class="row p-2">
+        <button class="col MyBlogButton CancelBtn" (click)="Back()">
+            Cancel
+        </button>
+        <button class="col MyBlogButton AddPostBtn" (click)="AddPost()">
+            Add Post
+        </button>
+    </div>
+    <div appDragAndDrop class="dropzone" (eventOut)="ChoosenThumbnail()"> 
+        <label for="thumbnail" class="text-center ThubmnailLabel h-75 w-100 " >Choose thumbnail or drag it here</label>
+        <input type="file" accept="image/*" id="thumbnail" style="display: none" (input)="ChoosenThumbnail($event)"/>
+        <div class="ThumbnailImageDisplay row ">
+           <p class="col-auto">Choosed file:</p>
+           <div *ngIf="Thumbnail.name!=''; else NoThumbnail" class="col row">
+                <p class="col-11">{{Thumbnail.name}}</p>
+                <button class="col-1 MyButtonList m-0 text-center" (click)="Deletethumbnail()">X</button>
+           </div>  
+           <ng-template #NoThumbnail> <p class="col">No Thumbnail was choosen</p></ng-template>
         </div>        
     </div>
 
     <div class="m-2">
-        <input placeholder="Post Title" class="MyInputs Title" [(ngModel)]="NewPost.Title">
+        <input placeholder="Post Title (required)" class="MyInputs Title" [(ngModel)]="NewPost.Title">
     </div>    
     <div class="m-2" ><!--content one required-->
-        <textarea class="MyTextArea" placeholder="First Paragraph" [(ngModel)]="NewPost.ContentOne"></textarea>
+        <textarea class="MyTextArea" placeholder="First Paragraph (required)" [(ngModel)]="NewPost.ContentOne"></textarea>
     </div>
-    <div class="m-2" ><!--content one required-->
+    <div class="m-2" ><!--content two not required-->
         <textarea class="MyTextArea" placeholder="Second Paragraph" [(ngModel)]="NewPost.ContentTwo"></textarea>
     </div>
 
@@ -26,7 +53,7 @@
             Choosed tags:
             <div class="d-flex flex-wrap w-100" *ngIf="TagList.length>0; else NoTags">
                 <div *ngFor="let tag of TagList">
-                        <app-tag [name]="tag" [RouteToTag]="false" appDeleteTag></app-tag>
+                        <app-tag [name]="tag" [RouteToTag]="false" (SendTagToDelete)="DeleteCerteinTag($event)"></app-tag>
                 </div>
             </div>
             <ng-template #NoTags>No Tag was choosed :c </ng-template>

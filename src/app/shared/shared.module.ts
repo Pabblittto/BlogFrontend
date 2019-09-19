@@ -9,7 +9,6 @@ import { CommonModule } from '@angular/common';
 import { PostElementComponent } from '../elements/post-element/post-element.component';
 import { TagComponent } from '../elements/tag-element/tag/tag.component';
 import { sharedRoutingModule } from './shared-routing.module';
-import { DeleteTagDirective } from '../directives/delete-tag.directive';
 
 
 
@@ -21,8 +20,7 @@ import { DeleteTagDirective } from '../directives/delete-tag.directive';
     ConfirmChangesComponent,
     PostModyficationPanelComponent,
     DragAndDropDirective,
-    InputSelectListComponent,
-    DeleteTagDirective
+    InputSelectListComponent
   ],
     imports: [
     CommonModule,
@@ -36,8 +34,7 @@ import { DeleteTagDirective } from '../directives/delete-tag.directive';
     ConfirmChangesComponent,
     PostModyficationPanelComponent,
     DragAndDropDirective,
-    InputSelectListComponent,
-    DeleteTagDirective
+    InputSelectListComponent
 
   ]
 })

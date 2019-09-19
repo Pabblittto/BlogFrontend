@@ -27,7 +27,7 @@ export class InputSelectListComponent implements OnInit {
   @Output() SelectedOption= new EventEmitter<string>();
 
   OptionClick(value){//when user click on one of the option
-    this.TypedString=value;
+    this.TypedString="";
     this.SelectedOption.emit(value);
   }
 
@@ -36,7 +36,6 @@ export class InputSelectListComponent implements OnInit {
   }
 
   ChangedInput(event:KeyboardEvent){// when user type something in tag input- sort all possible 
-    console.log(event);
     if(event!=null && event.key!="ArrowUp" && event.key!="ArrowDown"){// dont highlight anything becouse user is tyming something
       this.HIDEHighlight();
     }
@@ -75,11 +74,15 @@ export class InputSelectListComponent implements OnInit {
   SendSelected(){// emits selected option
     if(this.HighlightedElement!=-1){
       this.SelectedOption.emit(this.PossibleOptions[this.HighlightedElement]);
-      this.TypedString=this.PossibleOptions[this.HighlightedElement];
+      // this.TypedString=this.PossibleOptions[this.HighlightedElement];// change input to optin choosed from list
+      this.TypedString="";
     }
     else{
-      if(this.TypedString!="")// if it is not empty- sen its
+      if(this.TypedString!=""){// if it is not empty- sen its
       this.SelectedOption.emit(this.TypedString);
+      this.TypedString="";
+      }
+
     }
   }
 

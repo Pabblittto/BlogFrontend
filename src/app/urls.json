@@ -16,7 +16,8 @@
 
         "GetBlog":"",
         "DeletePost":"",
-        "ChangeDescription":""
+        "ChangeDescription":"",
+        "AddPost":""
         
         
 

@@ -9,6 +9,7 @@ import { MessagesService } from './../../services/Messages/messages.service';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { types } from 'src/app/services/Messages/Message';
+import { collectExternalReferences } from '@angular/compiler';
 
 
 @Component({
@@ -19,7 +20,7 @@ import { types } from 'src/app/services/Messages/Message';
 export class MyBlogComponent implements OnInit {
 
 
-  MyBlog:BlogModel;
+  MyBlog:BlogModel= new BlogModel();
   @ViewChild("ConfirmChanges",{static:true}) ConfirmChanges:ConfirmChangesComponent;
   @ViewChild("ConfirmIdentity",{static:false}) ConfirmIdentity:ConfirmIdentityComponent;
   AllPosts:number;
@@ -55,6 +56,8 @@ export class MyBlogComponent implements OnInit {
 
     this._blogservice.GetBlogInfo().subscribe(
       res=>{
+        console.log(res);
+        
         this.MyBlog.BlogName=res.BlogName;
         this.MyBlog.DateOfCreated=res.DateOfCreated;
         this.MyBlog.Description=res.Description;
@@ -81,37 +84,9 @@ export class MyBlogComponent implements OnInit {
     private messageProvider:MessagesService,
     private router:Router,
     private _blogservice:BlogService,
-    private _postService:PostService) {
-
-    this.MyBlog = new BlogModel({
-      BlogName:"Blogname Test",
-      Description:"this is my lovely blog hello people, i will describe some avesome dishes",
-      Posts:[
-        new Post({
-          PostId:1,
-          Title:"asdasdasd",
-          ContentOne:"Hello people this is content one, nice to meet you",
-          ContentTwo: "helo this is contetn two",
-          PostTags:["hello","hi","hey"]
-        }),
-        new Post({
-          PostId:2,
-          Title:"Another post",
-          ContentOne:"Hello people this is content one, nice to meet you",
-          ContentTwo: "helo this is contetn two",
-          PostTags:["hello","hi","hey"]
-        }),
-        new Post({
-          PostId:3,
-          Title:"i jeszcze kolejny, niezla jazda",
-          ContentOne:"Hello people this is content one, nice to meet you",
-          ContentTwo: "helo this is contetn two",
-          PostTags:["hello","hi","hey"]
-        })
-      ]
-
-    })
-
+    private _postService:PostService) 
+    {
+      
    }
 
 

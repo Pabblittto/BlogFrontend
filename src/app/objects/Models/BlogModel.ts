@@ -1,9 +1,9 @@
 import { Post } from './../Post';
 export class BlogModel{
 
-    BlogName:string;
+    BlogName: string;
     DateOfCreated: Date;
-    Description:string;
+    Description: string;
     Posts: Post[];
 
 

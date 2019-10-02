@@ -5,6 +5,7 @@ import { MessagesService } from './../../services/Messages/messages.service';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { types } from 'src/app/services/Messages/Message';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-modyfication-panel',
@@ -15,7 +16,11 @@ export class PostModyficationPanelComponent implements OnInit {
 
   constructor(private http : HttpClient,
     private messageProvider:MessagesService,
-    private _postService:PostService) { }
+    private _postService:PostService,
+    private router : Router    
+    ) {
+
+     }
 
 
   @Input() SpecyficPost:Post;
@@ -40,6 +45,7 @@ export class PostModyficationPanelComponent implements OnInit {
       this._postService.DeleteCertainPost(this.SpecyficPost.PostId.toString()).subscribe(
         res=>{
           this.messageProvider.AddMessage("Post deleted succesfully",types.success);
+           
         },
         (err:HttpErrorResponse)=>{
           if(err.status!=404){

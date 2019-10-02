@@ -11,16 +11,16 @@
         "ChangePassword": "http://localhost:61177/api/User/ChangePassword",
         "ChangeProfilePic":"http://localhost:61177/api/User/ChangeAvatar",
         "ChangeEmail":"",
-        "GetUserTags":"",
+        "GetUserTags":"http://localhost:61177/api/User/UserTags",
 
 
-        "GetBlog":"",
-        "DeletePost":"",
-        "ChangeDescription":"",
-        "AddPost":"",
+        "GetBlog":"http://localhost:61177/api/User/GetBlog",
+        "DeletePost":"http://localhost:61177/api/Posts/DeletePost",
+        "ChangeDescription":"http://localhost:61177/api/User/ChangeDescription",
+        "AddPost":"http://localhost:61177/api/Posts/AddPost",
         "DeleteBlog":"",
         "GetNumberOfPostsInBlog":"",
-        "GetPartOfPosts":""
+        "GetPartOfPosts":"http://localhost:61177/api/Posts/GetPartOfPosts"
 
         
         

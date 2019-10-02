@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import {types} from '../services/Messages/Message';
+import Urls from "../urls.json";
 
 @Component({
   selector: 'app-post',
@@ -14,6 +15,7 @@ import {types} from '../services/Messages/Message';
 })
 export class PostComponent implements OnInit {
 
+  BaseServerPath:string=Urls.MyServerPath;
   id:string;
   constructor(private route : ActivatedRoute, private postprovider : PostService,private message:MessagesService) {
     this.id=this.route.snapshot.paramMap.get('id');

@@ -7,7 +7,7 @@ export class Post{
     Title: string;
     ContentOne: string;
     ContentTwo: string;
-    Date: Date;
+    DateOfPost: Date;
     BlogId: number;
     BlogName:string;
     PostTags: string[];
@@ -20,7 +20,7 @@ export class Post{
         post && post.Title ? this.Title=post.Title : this.Title="";
         post && post.ContentOne ? this.ContentOne=post.ContentOne : this.ContentOne="";
         post && post.ContentTwo ? this.ContentTwo=post.ContentTwo : this.ContentTwo="";
-        post && post.Date ? this.Date=post.date : this.Date=new Date(2000,1,1);
+        post && post.DateOfPost ? this.DateOfPost=post.DateOfPost : this.DateOfPost=new Date(2000,1,1);
         post && post.PostId ? this.PostId=post.PostId : this.PostId=1;
         post && post.BlogId ? this.BlogId=post.BlogId : this.BlogId=1;
         post && post.PostTags ? this.PostTags=[...post.PostTags] : this.PostTags=[];

@@ -15,7 +15,7 @@ export class BlogService {
   constructor(private http:HttpClient) { }
 
   DeleteBlog(currentPassword:string):Observable<any>{
-    return this.http.post(this.DeleteBlogUrl,{value:currentPassword});
+    return this.http.post(this.DeleteBlogUrl,{Value:currentPassword});
   }
 
   GetBlogInfo():Observable<BlogModel>{

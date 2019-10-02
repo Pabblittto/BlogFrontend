@@ -21,7 +21,7 @@ export class PostService {
 
 
   GetCertainPost(id:string):Observable<Post>{
-    return this.http.post<Post>(this.CertainPost,{"PostId":id});
+    return this.http.post<Post>(this.CertainPost,{"Value":id});
   }
 
   CreateNewPost(model:NewPostModel){
@@ -29,7 +29,7 @@ export class PostService {
   }
 
   DeleteCertainPost(PostId:string):Observable<any>{
-    return this.http.post(this.DeletePost,{value:PostId});
+    return this.http.post(this.DeletePost,{Value:PostId});
   }
 
   GetNumberOfAllPosts():Observable<number>{

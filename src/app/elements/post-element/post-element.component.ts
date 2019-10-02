@@ -1,6 +1,7 @@
 import { Post } from './../../objects/Post';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Input } from '@angular/core';
+import Urls from "../../urls.json";
 
 
 @Component({
@@ -13,6 +14,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 @Input() _post: Post;
 
+  ServerBasicPath:string= Urls.MyServerPath;
 
 
   ngOnInit() {

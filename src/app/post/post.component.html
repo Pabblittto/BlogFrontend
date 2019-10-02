@@ -1,14 +1,14 @@
 <div><!--entire Post!-->
     <div>
-        <img class="picture-container" src="{{_post.Thumbnail}}">
-        <img class="normal-picture" src="{{_post.Thumbnail}}">
+        <img class="picture-container" src="{{BaseServerPath + _post.Thumbnail}}">
+        <img class="normal-picture" src="{{BaseServerPath + _post.Thumbnail}}">
     </div>
     <div class="text-center">
        <h1>{{_post.Title}}</h1> 
     </div>
 
     <div class="pt-1">
-        <h6><Strong>{{_post.Date | date}}</Strong> </h6>
+        <h6><Strong>{{_post.DateOfPost | date}}</Strong> </h6>
     </div>
     <div>
             {{_post.ContentOne}}

@@ -20,7 +20,7 @@ export class EditDescriptionComponent implements OnInit {
 
   ConfirmButton(){
     if(this.NewDescription!=this.Description){
-      this.http.post(this.ChangeDescriptionUrl,{}).subscribe(
+      this.http.post(this.ChangeDescriptionUrl,{Value:this.NewDescription}).subscribe(
         res=>{
           this.messageProvider.AddMessage("Description changed succesfully",types.success);
         },

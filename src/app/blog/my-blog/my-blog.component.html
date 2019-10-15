@@ -20,12 +20,16 @@
         <button class="MyBlogButton" (click)="DeleteBlogButton()" >Delete Blog</button>
                 <app-confirm-changes [Action]="'Delete Your Blog'" (Result)="ResultOfChanges($event)" #ConfirmChanges></app-confirm-changes>
                 <app-confirm-identity (Password)="RecivePasswordDeleteBlog($event)"  #ConfirmIdentity></app-confirm-identity>
-        <app-edit-description id="DescriptionEdit" style="display: none;" [Description]="MyBlog.Description" ></app-edit-description>
+        <app-edit-description id="DescriptionEdit" style="display: none;" [Description]="MyBlog.Description" #EditDescription ></app-edit-description>
     </div>
     <div class="PostsContainer">
         <div *ngFor="let postelem of MyBlog.Posts" class="row">
 
-                <app-post-modyfication-panel [SpecyficPost]="postelem" class="col-auto"></app-post-modyfication-panel>
-                <app-post-element [_post]="postelem" class="col "></app-post-element>
+                <app-post-modyfication-panel [SpecyficPost]="postelem" [MyBlog]="ThisObject" class="col-auto"></app-post-modyfication-panel>
+                <app-post-element [_post]="postelem" class="col"></app-post-element>
         </div>
     </div>
+    <div class="m-1">
+        <app-pageing-panel [ParentMyBlog]="ThisObject"></app-pageing-panel>
+    </div>
+</div>

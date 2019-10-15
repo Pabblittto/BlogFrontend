@@ -1,3 +1,4 @@
+import { Subject } from 'rxjs';
 import { MessagesService } from './../../services/Messages/messages.service';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit, Input } from '@angular/core';
@@ -35,6 +36,10 @@ export class EditDescriptionComponent implements OnInit {
 
     }
     document.getElementById("DescriptionEdit").style.display="none";
+  }
+
+  SetDescription(desc:string){
+    this.NewDescription=desc;
   }
 
   BackButton(){

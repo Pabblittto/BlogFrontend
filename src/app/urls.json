@@ -19,7 +19,7 @@
         "ChangeDescription":"http://localhost:61177/api/User/ChangeDescription",
         "AddPost":"http://localhost:61177/api/Posts/AddPost",
         "DeleteBlog":"",
-        "GetNumberOfPostsInBlog":"",
+        "GetNumberOfPostsInBlog":"http://localhost:61177/api/Posts/GetNumberOfPosts",
         "GetPartOfPosts":"http://localhost:61177/api/Posts/GetPartOfPosts"
 
         

@@ -1,3 +1,4 @@
+import { PageingPanelComponent } from './../elements/pageing-panel/pageing-panel.component';
 import { InputSelectListComponent } from './../elements/input-select-list/input-select-list.component';
 import { DragAndDropDirective } from './../directives/drag-and-drop.directive';
 import { PostModyficationPanelComponent } from './../elements/post-modyfication-panel/post-modyfication-panel.component';
@@ -20,7 +21,8 @@ import { sharedRoutingModule } from './shared-routing.module';
     ConfirmChangesComponent,
     PostModyficationPanelComponent,
     DragAndDropDirective,
-    InputSelectListComponent
+    InputSelectListComponent,
+    PageingPanelComponent
   ],
     imports: [
     CommonModule,
@@ -34,7 +36,8 @@ import { sharedRoutingModule } from './shared-routing.module';
     ConfirmChangesComponent,
     PostModyficationPanelComponent,
     DragAndDropDirective,
-    InputSelectListComponent
+    InputSelectListComponent,
+    PageingPanelComponent
 
   ]
 })

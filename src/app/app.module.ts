@@ -31,7 +31,7 @@ import { PostElementComponent } from './elements/post-element/post-element.compo
     MainMessagesComponent,
     NewsComponent,
     PostComponent
-    ],
+      ],
   imports: [
     BrowserModule,
     AppRoutingModule,

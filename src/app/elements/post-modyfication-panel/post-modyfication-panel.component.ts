@@ -1,3 +1,5 @@
+import { MyBlogComponent } from './../../blog/my-blog/my-blog.component';
+import { Subject, asapScheduler } from 'rxjs';
 import { PostService } from './../../services/Post/post.service';
 import { ConfirmChangesComponent } from './../confirm-changes/confirm-changes.component';
 import { Post } from './../../objects/Post';
@@ -22,7 +24,7 @@ export class PostModyficationPanelComponent implements OnInit {
 
      }
 
-
+  @Input("MyBlog") ParentMyBlog:MyBlogComponent;
   @Input() SpecyficPost:Post;
   @ViewChild(ConfirmChangesComponent,{static:false}) ConfirmChanges:ConfirmChangesComponent;
 
@@ -38,14 +40,15 @@ export class PostModyficationPanelComponent implements OnInit {
 
   GetResult(event:boolean):void{
     this.result=event;
-    // document.getElementById(`Confirm${this.SpecyficPost.PostId}`).style.display="none";
     this.ConfirmChanges.Hide();
     if(this.result==true){
 
       this._postService.DeleteCertainPost(this.SpecyficPost.PostId.toString()).subscribe(
         res=>{
           this.messageProvider.AddMessage("Post deleted succesfully",types.success);
-           
+// tu muisi być wczytanie całego okna, program pobiera ścieżkę z urla i ją wczytujejeszcz
+           this.ParentMyBlog.RenderSiteAgain();
+
         },
         (err:HttpErrorResponse)=>{
           if(err.status!=404){
@@ -62,7 +65,6 @@ export class PostModyficationPanelComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.SpecyficPost.Title);
-    
   }
 
 }
